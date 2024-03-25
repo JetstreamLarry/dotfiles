@@ -1,0 +1,1 @@
+Config files for most of the stuff i use. *Really* needs to be organized.
