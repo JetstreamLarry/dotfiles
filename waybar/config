@@ -1,0 +1,110 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-right": ["cpu", "temperature", "custom/gpu-usage", "custom/gpu-temperature", "memory", "battery", "pulseaudio", "hyprland/language", "idle_inhibitor", "clock", "tray"],
+    "reload_on_style_change": true,
+    "battery": {
+        "states": {
+            "good": 100,
+            "normal": 90,
+            "warning": 50,
+            "critical": 25,
+        },
+        "format-charging": "{capacity}% ",
+        "format-good": "",
+        "format-charging-good": "",
+        "format-normal": "{capacity}% {icon}",
+        "format-warning": "{capacity}% {icon}",
+        "format-critical": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%d/%m @ %H:%M:%S}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "on-click": "alacritty -e btop"
+    },
+    "custom/gpu-temperature": {
+        "exec": "nvidia-smi | grep Default | cut -c 9-10 | tr -d \" \"",
+        "format": "{}°C ",
+        "interval": 10,
+        "on-click": "alacritty -e nvtop"
+    },
+    "custom/gpu-usage": {
+        "exec": "nvidia-smi | grep Default | cut -c 73-75 | tr -d \" \"",
+        "format": "{}% ",
+        "interval": 10,
+        "on-click": "alacritty -e nvtop"
+    },
+    "hyprland/language": {
+    "format": "{} ",
+    "format-it": "IT",
+    "format-en": "US",
+    "keyboard-name": "sigmachip-usb-keyboard",
+    "on-click": "hyprctl switchxkblayout sigmachip-usb-keyboard next"
+    },
+    "hyprland/window": {
+        "format": "{}",
+    "separate-outputs": true
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-muted": "MUTE",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "MUTE ",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
+        "critical-threshold": 90,
+        "format-critical": "{temperatureC}°C ",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""],
+        "on-click": "alacritty -e btop"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+}
+
