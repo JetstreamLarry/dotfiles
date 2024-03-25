@@ -1,0 +1,10 @@
+/*
+/btop/*.log
+!.gitignore
+!readme.md
+!/alacritty
+!/btop
+!/dunst
+!/hypr
+!/kanshi
+!/waybar
