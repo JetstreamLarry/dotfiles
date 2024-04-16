@@ -1,5 +1,6 @@
 /*
-/btop/*.log
+hostSpecific*
+*log
 !.gitignore
 !readme.md
 !/alacritty
@@ -7,6 +8,5 @@
 !/dunst
 !/hypr
 /hypr/*GPU
-/hypr/hostSpecific.conf
 !/kanshi
 !/waybar
