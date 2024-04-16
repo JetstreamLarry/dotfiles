@@ -1,17 +1,17 @@
 profile laptop {
     output eDP-1 enable mode 1920x1080@60 scale 1 position 0,0
 
-    exec hyprpaper
+    exec killall hyprpaper && hyprpaper
 }
 profile docked {
     output HDMI-A-1 enable mode 1920x1080@60 scale 1 position 1920,0
     output DP-1 enable mode 1920x1080@60 scale 1 position 0,0
 
-    exec hyprpaper
+    exec killall hyprpaper && hyprpaper
 }
 profile tv {
     output eDP-1 disable
     output HDMI-A-1 enable mode 1920x1080@60 scale 1 position 0,0
 
-    exec hyprpaper
+    exec killall hyprpaper && hyprpaper
 }

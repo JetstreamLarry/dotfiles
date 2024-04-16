@@ -1,1 +1,1 @@
-include $XDG_CONFIG_HOME/kanshi/scopedog-kanshi
+include $XDG_CONFIG_HOME/kanshi/hostSpecific-kanshi
