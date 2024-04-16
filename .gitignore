@@ -6,5 +6,7 @@
 !/btop
 !/dunst
 !/hypr
+/hypr/*GPU
+/hypr/hostSpecific.conf
 !/kanshi
 !/waybar
